@@ -1,10 +1,10 @@
-# Deploy RIJO AI landing page
+# Deploy RIJO AI landing page to GitHub Pages
 
 ## 1. Push to GitHub
 
-Create a **new repository** on [GitHub](https://github.com/new) (e.g. `rijo-ai-landing`). Do **not** add a README, .gitignore, or license (the project already has them).
+Create a **new repository** on [GitHub](https://github.com/new) (e.g. `rijo-ai-landing` or `Lading-page`). Do **not** add a README, .gitignore, or license.
 
-Then run in this folder:
+Then run:
 
 ```bash
 cd "/Users/joseduran/Desktop/Lading page"
@@ -17,22 +17,20 @@ Replace `YOUR_USERNAME` and `YOUR_REPO_NAME` with your GitHub username and repo 
 
 ---
 
-## 2. Deploy with Vercel (recommended)
+## 2. Turn on GitHub Pages
 
-1. Go to [vercel.com](https://vercel.com) and sign in with GitHub.
-2. Click **Add New** → **Project** and import your repository.
-3. Vercel will detect **Vite**. Keep:
-   - **Build Command:** `npm run build`
-   - **Output Directory:** `dist`
-4. Click **Deploy**. Your site will be live at `https://your-project.vercel.app`.
+1. In your repo on GitHub, go to **Settings** → **Pages**.
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+3. Save. No need to choose a branch — the workflow deploys the built site.
 
 ---
 
-## 3. Or deploy with Netlify
+## 3. Deploy
 
-1. Go to [netlify.com](https://netlify.com) and sign in with GitHub.
-2. **Add new site** → **Import an existing project** → choose your repo.
-3. Set:
-   - **Build command:** `npm run build`
-   - **Publish directory:** `dist`
-4. Click **Deploy site**.
+Every push to `main` will run the workflow, build the Vite app, and deploy to GitHub Pages.
+
+Your site will be live at:
+
+**https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/**
+
+(First deployment can take 1–2 minutes. Check the **Actions** tab for status.)
